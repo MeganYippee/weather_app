@@ -1,0 +1,77 @@
+h1 {
+  font-family: work sans, sans-serif;
+  font-size: 50px;
+  padding: 20px;
+}
+h3 {
+  font-family: poppins, sans-serif;
+  padding-top: 30px;
+  text-align: center;
+}
+button {
+  margin: 20px;
+}
+.top {
+  padding-bottom: 40px;
+}
+.card {
+  font-family: poppins, sans-serif;
+  display: block;
+  margin: 0px auto;
+}
+.card {
+  border-radius: 20px;
+}
+.card-body {
+  color: #f1faee;
+  border: solid #ebfaff;
+  border-radius: 20px;
+  background-color: #1d3557;
+}
+.city {
+  font-size: 55px;
+  text-align: center;
+  text-transform: capitalize;
+}
+.next {
+  font-size: 20px;
+  padding: 40px auto;
+  text-align: center;
+}
+.bottom {
+  padding-bottom: 30px;
+}
+.card-text {
+  padding-top: 30px;
+  margin: 0px;
+}
+.fas {
+  color: #ffae03;
+}
+.search {
+  border: #0fa3b1;
+  border-radius: 10px;
+}
+.units {
+  color: #f1faee;
+  font-size: 20px;
+  position: relative;
+  text-decoration: none;
+  top: -25px;
+}
+.btn-colour-1 {
+  background-color: #ebfaff;
+  color: #1d3557;
+  border: 0px;
+  border-radius: 10px;
+  margin: 250px;
+  max-width: 150px;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 3px 3px 5px rgba(0, 0, 255, 0.2);
+}
+.btn-colour-1:hover {
+  background-color: #ffae03;
+  transition: ease-in-out 250ms;
+}

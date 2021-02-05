@@ -15,20 +15,17 @@ button {
   margin: 20px;
 }
 .top {
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 }
 .card {
   font-family: poppins, sans-serif;
   display: block;
   margin: 0px auto;
 }
-.card {
-  border-radius: 20px;
-}
 .card-body {
   color: #f1faee;
   border: solid #ebfaff;
-  border-radius: 20px;
+  border-radius: 30px;
   background-color: #1d3557;
 }
 .city {
@@ -38,7 +35,6 @@ button {
 }
 .next {
   font-size: 20px;
-  padding: 40px auto;
   text-align: center;
 }
 .bottom {

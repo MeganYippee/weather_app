@@ -2,7 +2,13 @@
 let now = new Date();
 
 let hour = now.getHours();
+if (hour < 10) {
+  hour = `0${hour}`;
+}
 let minute = now.getMinutes();
+if (minute < 10) {
+  minute = `0${minute}`;
+}
 
 let days = [
   "Sunday",
@@ -38,6 +44,7 @@ today.innerHTML = `Today is ${day}, ${month} ${date}, ${year} at ${hour}:${minut
 // City Info
 function city(event) {
   event.preventDefault();
+
   let cityName = document.querySelector(".city");
   let searchInput = document.querySelector("#city-search-input");
   cityName.innerHTML = `${searchInput.value}`;
@@ -46,7 +53,16 @@ function city(event) {
     document.querySelector("#city").innerHTML = response.data.name;
     let temp = Math.round(response.data.main.temp);
     let realTemp = document.querySelector("#temperature");
+
+    let humidityElement = document.querySelector("#humidity");
+    let windElement = document.querySelector("#wind");
+    let conditionElement = document.querySelector("#condition");
+
+    humidityElement.innerHTML = `${response.data.main.humidity}%`;
+    windElement.innerHTML = Math.round(response.data.wind.speed);
+    conditionElement.innerHTML = `${response.data.weather}`;
     realTemp.innerHTML = `${temp}`;
+    console.log(response);
   }
   let apiKey = "c87f4cfeec08e60e3fffae2d5c8fb202";
   let units = "imperial";

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
 
-    <link rel="stylesheet" href="src\weather_style.css" />
     <!-- font awesome -->
     <script
       src="https://kit.fontawesome.com/f8c17588d6.js"
@@ -30,6 +29,7 @@
     />
     <!--axios-->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src\weather_style.css" />
   </head>
 
   <body>
@@ -43,11 +43,13 @@
           <div class="row align-items-start">
             <div class="col">
               <h4>
-                Percipitation: 10%
+                Humidity:
+                <span id="humidity">10%</span>
                 <br />
-                Wind: 3mph
+                Wind:
+                <span id="wind">3</span> Mph
                 <br />
-                Sunny
+                <span id="condition">Sunny</span>
               </h4>
             </div>
             <div class="col">

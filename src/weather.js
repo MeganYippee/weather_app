@@ -57,10 +57,12 @@ function city(event) {
     let humidityElement = document.querySelector("#humidity");
     let windElement = document.querySelector("#wind");
     let conditionElement = document.querySelector("#condition");
+    let iconElement = document.querySelector("#icon");
 
     humidityElement.innerHTML = `${response.data.main.humidity}%`;
     windElement.innerHTML = Math.round(response.data.wind.speed);
     conditionElement.innerHTML = `${response.data.weather[0].description}`;
+    iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     realTemp.innerHTML = `${temp}`;
   }
   let apiKey = "c87f4cfeec08e60e3fffae2d5c8fb202";
@@ -105,6 +107,7 @@ function currentPosition(response) {
   let currentHumidity = document.querySelector("#humidity");
   let currentWind = document.querySelector("#wind");
   let currentCondition = document.querySelector("#condition");
+  
   currentHumidity.innerHTML = `${response.data.main.humidity}%`;
   currentWind.innerHTML = Math.round(response.data.wind.speed);
   currentCondition.innerHTML = `${response.data.weather[0].description}`;

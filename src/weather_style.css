@@ -74,3 +74,6 @@ button {
   background-color: #ffae03;
   transition: ease-in-out 250ms;
 }
+#condition {
+  text-transform: capitalize;
+}

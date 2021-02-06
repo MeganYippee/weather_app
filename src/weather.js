@@ -60,7 +60,7 @@ function city(event) {
 
     humidityElement.innerHTML = `${response.data.main.humidity}%`;
     windElement.innerHTML = Math.round(response.data.wind.speed);
-    conditionElement.innerHTML = `${response.data.weather}`;
+    conditionElement.innerHTML = `${response.data.weather[0].description}`;
     realTemp.innerHTML = `${temp}`;
     console.log(response);
   }

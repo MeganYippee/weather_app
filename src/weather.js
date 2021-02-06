@@ -41,6 +41,8 @@ let date = now.getDate();
 let today = document.querySelector("#today-is");
 today.innerHTML = `Today is ${day}, ${month} ${date}, ${year} at ${hour}:${minute}`;
 
+getCoords();
+
 // City Info
 function city(event) {
   event.preventDefault();

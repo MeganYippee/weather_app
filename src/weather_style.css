@@ -19,6 +19,7 @@ button {
   padding-bottom: 20px;
 }
 .card {
+  border: none;
   font-family: poppins, sans-serif;
   display: block;
   margin: 0px auto;

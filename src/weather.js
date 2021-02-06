@@ -107,10 +107,12 @@ function currentPosition(response) {
   let currentHumidity = document.querySelector("#humidity");
   let currentWind = document.querySelector("#wind");
   let currentCondition = document.querySelector("#condition");
-  
+  let currentIcon = document.querySelector("#icon");
+
   currentHumidity.innerHTML = `${response.data.main.humidity}%`;
   currentWind.innerHTML = Math.round(response.data.wind.speed);
   currentCondition.innerHTML = `${response.data.weather[0].description}`;
+  currentIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   currentPlace.innerHTML = `${response.data.name}`;
   currentTemp.innerHTML = `${currentTemperature}`;
 }

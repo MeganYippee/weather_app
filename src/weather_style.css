@@ -4,7 +4,6 @@ a {
 h1 {
   font-family: work sans, sans-serif;
   font-size: 50px;
-  padding: 20px;
   text-align: center;
 }
 h3 {
@@ -12,11 +11,18 @@ h3 {
   padding-top: 30px;
   text-align: center;
 }
+li {
+  font-size: 25px;
+  font-weight: 500;
+  display: block;
+  padding-left: 30px;
+  text-decoration: none;
+}
 button {
   margin: 20px;
 }
 .top {
-  padding-bottom: 20px;
+  padding: 20px;
 }
 .card {
   border: none;
@@ -45,6 +51,9 @@ button {
 .card-text {
   padding-top: 30px;
   margin: 0px;
+}
+#forecast {
+  padding-left: 60px;
 }
 .fas {
   color: #ffae03;

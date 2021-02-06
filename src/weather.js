@@ -62,7 +62,6 @@ function city(event) {
     windElement.innerHTML = Math.round(response.data.wind.speed);
     conditionElement.innerHTML = `${response.data.weather[0].description}`;
     realTemp.innerHTML = `${temp}`;
-    console.log(response);
   }
   let apiKey = "c87f4cfeec08e60e3fffae2d5c8fb202";
   let units = "imperial";
@@ -102,6 +101,14 @@ function thisPosition(position) {
 function currentPosition(response) {
   let currentTemperature = Math.round(response.data.main.temp);
   let currentTemp = document.querySelector("#temperature");
+  let currentPlace = document.querySelector("#city");
+  let currentHumidity = document.querySelector("#humidity");
+  let currentWind = document.querySelector("#wind");
+  let currentCondition = document.querySelector("#condition");
+  currentHumidity.innerHTML = `${response.data.main.humidity}%`;
+  currentWind.innerHTML = Math.round(response.data.wind.speed);
+  currentCondition.innerHTML = `${response.data.weather[0].description}`;
+  currentPlace.innerHTML = `${response.data.name}`;
   currentTemp.innerHTML = `${currentTemperature}`;
 }
 

@@ -32,7 +32,7 @@ button {
 }
 .card-body {
   color: #f1faee;
-  border: solid #ebfaff;
+  border: solid 5px #e2651d;
   border-radius: 30px;
   background-color: #1d3557;
 }

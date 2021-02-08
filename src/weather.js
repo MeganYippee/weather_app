@@ -61,10 +61,16 @@ function city(event) {
     let conditionElement = document.querySelector("#condition");
     let iconElement = document.querySelector("#icon");
 
+    celciusUni = response.data.main.temp;
+    console.log(celciusUni);
+
     humidityElement.innerHTML = `${response.data.main.humidity}%`;
     windElement.innerHTML = Math.round(response.data.wind.speed);
     conditionElement.innerHTML = `${response.data.weather[0].description}`;
-    iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    iconElement.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
     realTemp.innerHTML = `${temp}`;
   }
   let apiKey = "c87f4cfeec08e60e3fffae2d5c8fb202";
@@ -74,22 +80,6 @@ function city(event) {
 }
 let searchCity = document.querySelector("#search");
 searchCity.addEventListener("submit", city);
-
-// Degree Units
-function convertCel(event) {
-  event.preventDefault();
-  let celElement = document.querySelector("#temperature");
-  celElement.innerHTML = 25;
-}
-function convertFah(event) {
-  event.preventDefault();
-  let fahElement = document.querySelector("#temperature");
-  fahElement.innerHTML = 77;
-}
-let celciusLink = document.querySelector("#celcius");
-let fahrenheitLink = document.querySelector("#fahrenheit");
-celciusLink.addEventListener("click", convertCel);
-fahrenheitLink.addEventListener("click", convertFah);
 
 // Current Location Button
 function getCoords() {
@@ -114,10 +104,26 @@ function currentPosition(response) {
   currentHumidity.innerHTML = `${response.data.main.humidity}%`;
   currentWind.innerHTML = Math.round(response.data.wind.speed);
   currentCondition.innerHTML = `${response.data.weather[0].description}`;
-  currentIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  currentIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
   currentPlace.innerHTML = `${response.data.name}`;
   currentTemp.innerHTML = `${currentTemperature}`;
 }
 
 let currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", getCoords);
+
+// Temperature Unit Conversion
+function celciusConversion(event) {
+  event.preventDefault();
+  let celciusTemp = ((celciusUni - 32) * 5) / 9;
+  let celciusActual = document.querySelector("#temperature");
+  celciusActual.innerHTML = Math.round(celciusTemp);
+}
+
+let celciusUni = null;
+
+let celcius = document.querySelector("#celcius-link");
+celcius.addEventListener("click", celciusConversion);

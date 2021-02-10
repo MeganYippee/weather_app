@@ -85,6 +85,13 @@ button {
   background-color: #ffae03;
   transition: ease-in-out 250ms;
 }
+.active {
+  color: #ebfaff;
+}
+.active:hover {
+  color: #ebfaff;
+  cursor: default;
+}
 #condition {
   text-transform: capitalize;
 }

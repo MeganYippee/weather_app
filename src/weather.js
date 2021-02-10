@@ -61,8 +61,7 @@ function city(event) {
     let conditionElement = document.querySelector("#condition");
     let iconElement = document.querySelector("#icon");
 
-    celciusUni = response.data.main.temp;
-    console.log(celciusUni);
+    fahrenheitResponse = response.data.main.temp;
 
     humidityElement.innerHTML = `${response.data.main.humidity}%`;
     windElement.innerHTML = Math.round(response.data.wind.speed);
@@ -101,6 +100,8 @@ function currentPosition(response) {
   let currentCondition = document.querySelector("#condition");
   let currentIcon = document.querySelector("#icon");
 
+  fahrenheitResponse = response.data.main.temp;
+
   currentHumidity.innerHTML = `${response.data.main.humidity}%`;
   currentWind.innerHTML = Math.round(response.data.wind.speed);
   currentCondition.innerHTML = `${response.data.weather[0].description}`;
@@ -116,14 +117,27 @@ let currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", getCoords);
 
 // Temperature Unit Conversion
+
+// Celcius
 function celciusConversion(event) {
   event.preventDefault();
-  let celciusTemp = ((celciusUni - 32) * 5) / 9;
+  celcius.classList.add("active");
+  fahrenheit.classList.remove("active");
+  let celciusTemp = ((fahrenheitResponse - 32) * 5) / 9;
   let celciusActual = document.querySelector("#temperature");
   celciusActual.innerHTML = Math.round(celciusTemp);
 }
-
-let celciusUni = null;
+function fahrenheitConversion(event) {
+  event.preventDefault();
+  fahrenheit.classList.add("active");
+  celcius.classList.remove("active");
+  let fahrenheitActual = document.querySelector("#temperature");
+  fahrenheitActual.innerHTML = Math.round(fahrenheitResponse);
+}
+let fahrenheitResponse = null;
 
 let celcius = document.querySelector("#celcius-link");
 celcius.addEventListener("click", celciusConversion);
+
+let fahrenheit = document.querySelector("#fahrenheit-link");
+fahrenheit.addEventListener("click", fahrenheitConversion);

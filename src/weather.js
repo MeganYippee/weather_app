@@ -44,6 +44,9 @@ today.innerHTML = `Today is ${day}, ${month} ${date}, ${year} at ${hour}:${minut
 getCoords();
 
 // City Info
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+}
 function city(event) {
   event.preventDefault();
 
@@ -76,6 +79,9 @@ function city(event) {
   let units = "imperial";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(weatherInfo);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiUrl}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 let searchCity = document.querySelector("#search");
 searchCity.addEventListener("submit", city);

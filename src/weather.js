@@ -62,7 +62,23 @@ function formatHours(timestamp) {
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecast = response.data.list[0];
+  console.log(response.data);
   forecastElement.innerHTML = `
+            <div class="col-3">
+              <h5>
+                ${forecast.dt}
+                <br />
+                ${Math.round(forecast.main.temp)} °F
+                <br />
+                <img
+                    src="http://openweathermap.org/img/wn/${
+                      forecast.weather[0].icon
+                    }@2x.png"
+                    >
+              </h5>
+            </div>`;
+  forecast = response.data.list[1];
+  forecastElement.innerHTML += `
             <div class="col-3">
               <h5>
                 ${formatHours(forecast.dt)}
@@ -108,9 +124,9 @@ function city(event) {
   cityName.innerHTML = `${searchInput.value}`;
   let apiKey = "c87f4cfeec08e60e3fffae2d5c8fb202";
   let units = "imperial";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&appid=${apiKey}&units=Imperial`;
   axios.get(apiUrl).then(weatherInfo);
-  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${searchInput.value}&appid=${apiKey}&units=${units}`;
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${searchInput.value}&appid=${apiKey}&units=Imperial`;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -138,7 +154,6 @@ function currentPosition(response) {
   let currentWind = document.querySelector("#wind");
   let currentCondition = document.querySelector("#condition");
   let currentIcon = document.querySelector("#icon");
-  let apiKey = "c87f4cfeec08e60e3fffae2d5c8fb202";
 
   fahrenheitResponse = response.data.main.temp;
 
@@ -152,8 +167,10 @@ function currentPosition(response) {
   currentPlace.innerHTML = `${response.data.name}`;
   currentTemp.innerHTML = `${currentTemperature}`;
 
-  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${response.data.name}&appid=${apiKey}&units=imperial`;
-  axios.get(apiUrl).then(displayForecast);
+  //let apiKey = "c87f4cfeec08e60e3fffae2d5c8fb202";
+  //let units = "imperial";
+  //let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${response.data.name}&appid=${apiKey}&units=${units}`;
+  //axios.get(apiUrl).then(displayForecast);
 }
 
 let currentLocation = document.querySelector("#current-location");

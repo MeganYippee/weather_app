@@ -41,6 +41,9 @@ button {
   text-align: center;
   text-transform: capitalize;
 }
+.ahead {
+  padding-bottom: 15px;
+}
 .bottom {
   padding-bottom: 30px;
 }

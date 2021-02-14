@@ -52,7 +52,8 @@ button {
   margin: 0px;
 }
 #forecast {
-  padding-left: 60px;
+  text-align: center;
+  padding-left: 20px;
 }
 .fas {
   color: #ffae03;

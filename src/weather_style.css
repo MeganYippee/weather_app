@@ -21,6 +21,9 @@ li {
 button {
   margin: 20px;
 }
+.fas {
+  color: #e63946;
+}
 .top {
   padding: 20px;
 }
@@ -32,7 +35,7 @@ button {
 }
 .card-body {
   color: #f1faee;
-  border: solid 5px #f37a34;
+  border: solid 5px #a8dadc;
   border-radius: 30px;
   background-color: #1d3557;
 }
